@@ -27,7 +27,7 @@ public class NumberGenerator {
 
         for (int i = 0 ;i <=n ; i++){
 
-         double a = rnd(-10,10);
+         double a = rnd(-100,100);
             System.out.println("a=" + a );
             if (a<0) {
                 throw new IllegalArgumentException("The argument cannot be negative");
