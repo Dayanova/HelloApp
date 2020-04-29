@@ -1,0 +1,762 @@
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(date 1587668150947)
++++ .idea/.gitignore	(date 1587668150947)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
++# Editor-based HTTP Client requests
++/httpRequests/
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(date 1587668329798)
++++ .idea/misc.xml	(date 1587668329798)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectKey">
++    <option name="state" value="project://e2804f05-5315-4fc6-a121-c522a6c26470" />
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(date 1587668330172)
++++ .idea/modules.xml	(date 1587668330172)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/HelloApp.iml" filepath="$PROJECT_DIR$/HelloApp.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1588196569915)
++++ .idea/vcs.xml	(date 1588196569915)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="D:/Git" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/description.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/description.html	(date 1587668099495)
++++ .idea/description.html	(date 1587668099495)
+@@ -0,0 +1,1 @@
++<html>Simple <b>Java</b> application that includes a class with <code>main()</code> method</html>
+\ No newline at end of file
+Index: .idea/project-template.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/project-template.xml	(date 1587668099517)
++++ .idea/project-template.xml	(date 1587668099517)
+@@ -0,0 +1,3 @@
++<template>
++  <input-field default="com.company">IJ_BASE_PACKAGE</input-field>
++</template>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/uiDesigner.xml	(date 1587891959579)
++++ .idea/uiDesigner.xml	(date 1587891959579)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: HelloApp.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- HelloApp.iml	(date 1587668099542)
++++ HelloApp.iml	(date 1587668099542)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
++
+Index: src/com/example/array/NumberGenerator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/example/array/NumberGenerator.java	(date 1588195046014)
++++ src/com/example/array/NumberGenerator.java	(date 1588195046014)
+@@ -0,0 +1,36 @@
++package com.example.array;
++import java.util.Random;
++import java.util.Scanner;
++
++public class NumberGenerator {
++
++    public static void main(String[] args) {
++
++        Scanner in = new Scanner(System.in);
++        System.out.print("Введите целое число N : ");
++        int n = in.nextInt();
++        System.out.print("Введите целое число K: ");
++        int k = in.nextInt();
++
++        Random ran = new Random();
++
++        for (int i = 0 ;i <=n ; i++){
++
++         double a = ran.nextDouble();
++            System.out.println("a=" + a );
++            /** Для каждого числа k вычислить квадратный корень q*/
++         if ( i == k ){
++            double q = Math.sqrt(a) ;
++             System.out.println("q=" + q);
++             /**Если квадрат целой части q числа рав k, то вывести это числ на экран.*/
++
++            double d = Math.pow( q%10,2);
++             System.out.println("d=" + d );
++
++            if (d == k){
++                System.out.println("q=" + q );
++            }
++         }
++      }
++    }
++}
+Index: src/com/example/helloworld/HelloWorld.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/example/helloworld/HelloWorld.java	(date 1588179280774)
++++ src/com/example/helloworld/HelloWorld.java	(date 1588179280774)
+@@ -0,0 +1,46 @@
++package com.example.helloworld;
++
++class PrintMess {
++    public void printMessage() {
++        System.out.println("Hello, World!");
++    }
++}
++/**
++ * Класс для вывода ошибки «NullPointerException»
++ * @ author Dayanova
++ * @ version 1.0
++ */
++ public class HelloWorld {
++
++    public static void main(String[] args) {
++        PrintMess Message1= null;
++        Message1.printMessage();
++    }
++}
++
++/**
++ * Класс для вывода ошибки ««ArrayIndexOutOfBoundsException»»
++ * @ author Dayanova
++ * @ version 1.0
++ */
++class PrintArray {
++
++    public static void main(String[] args) {
++        String[] Customer = new String[] {"Andrey", "Sergey" };
++        System.out.println(Customer[2]);
++    }
++
++}
++/**
++ * Класс для вывода своего варианта ошибки через оператор throw
++ * @ author Dayanova
++ * @ version 1.0
++ */
++class printHelloWorld {
++
++    public static void main(String[] args) {
++        PrintMess Message1= null;
++        if (Message1 == null)
++            throw new IllegalArgumentException("The argument cannot be null");
++    }
++}
+Index: .idea/dictionaries/.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dictionaries/.xml	(date 1588177594960)
++++ .idea/dictionaries/.xml	(date 1588177594960)
+@@ -0,0 +1,7 @@
++<component name="ProjectDictionaryState">
++  <dictionary name="Фаягуль">
++    <words>
++      <w>dayanova</w>
++    </words>
++  </dictionary>
++</component>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(date 1587668330051)
++++ .idea/encodings.xml	(date 1587668330051)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="PROJECT" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/com/example/person/OrderByPerson.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/example/person/OrderByPerson.java	(date 1588178950675)
++++ src/com/example/person/OrderByPerson.java	(date 1588178950675)
+@@ -0,0 +1,189 @@
++package com.example.person;
++
++import java.util.Arrays;
++import java.util.Comparator;
++
++/**
++ * Класс Пол с константами  <b>WOMAN</b> , <b>MAN</b>
++ * @ author Dayanova
++ * @ version 1.0
++ */
++class Sex {
++    public static final String WOMAN = "Woman";
++    public static final String MAN = "Man";
++}
++
++/**
++ * Класс Человек со свойствами <b>Age</b> , <b>Name</b> и <b>GenderPerson</b>
++ * @ author Dayanova
++ * @ version 1.0
++ */
++
++class Person {
++    /** поле возраст*/
++     public int Age;
++     /** поле имя*/
++     public String Name;
++     /** поле пол*/
++     public String GenderPerson;
++
++     /**
++     * Конструктор - создание нового объекта
++     * @see Person#Person(int,String,String)
++     */
++    public Person(int age,String gender, String name) {
++        this.Age = age;
++        this.GenderPerson =gender;
++        this.Name = name;
++    }
++    /**
++     * Функция получения значения поля {@link Person#Name}
++     * @return возвращает имя человека
++     */
++    public String getName() {
++        return Name;
++    }
++    /**
++     * Функция получения значения поля {@link Person#Age}
++     * @return возвращает возраст человека
++     */
++    public int GetAge() {
++        return Age;
++    }
++    /**
++     * Функция получения значения поля {@link Person#GenderPerson}
++     * @return возвращает пол человека
++     */
++    public String getGenderPerson() {
++        return GenderPerson;
++    }
++
++}
++/**
++ * Класс Компаратор для сортировки по имени и полу
++ * @ author Dayanova
++ * @ version 1.0
++ */
++class SortedByName implements Comparator<Person>
++{
++/**
++ * Метод compareTo для сравнения двух объектов {@link Person}
++ * @return возвращает результат сравнения
++ */
++    public int compare(Person obj1, Person obj2)
++    {
++        int r = obj1.getName().compareTo( obj2.getName() );
++        if (r != 0) return r;
++        r = obj1.getGenderPerson().compareTo( obj2.getGenderPerson() );
++        if (r != 0) return r;
++        return 0;
++    }
++}
++/**
++ * Класс Компаратор для сортировки по возрасту
++ * @ author Dayanova
++ * @ version 1.0
++ */
++
++class SortedByAge implements Comparator<Person>
++{
++ /**
++ * Метод compareTo для сравнения двух объектов {@link Person}
++ * @return возвращает результат сравнения
++ */
++    public int compare(Person obj1, Person obj2)
++    {
++        int price1 = obj1.GetAge();
++        int price2 = obj2.GetAge();
++
++        if (price1 > price2) {
++            return 1;
++        } else if (price1 < price2) {
++            return -1;
++        } else {
++            return 0;
++        }
++    }
++}
++/**
++ * Класс для заполнения и сортировки массивов с персонами
++ * @ author Dayanova
++ * @ version 1.0
++ */
++public class OrderByPerson {
++
++    /**
++     * Метод для генерации числа в промежутке min и max
++     * @param max - максимальное числа для генерации
++     * @param min - минимальныное число для генерации
++     * @return возвращает число
++     */
++     static int rnd(int min, int max)
++    {
++        max -= min;
++        return (int) (Math.random() * ++max) + min;
++    }
++    /**
++     * Метод для возвращает пол из константы
++     * @param num - число 1 либо 0
++     * @return возвращает пол
++     */
++    static String GetGender(int num) {
++            if (num == 1)
++                return Sex.MAN;
++            else return Sex.WOMAN;
++    }
++
++    public static void main(String[] args) {
++        String[] wordListOne = { "Фидо","Зевс","Максим","Виталий","Максим","Валентин","Эмиль",
++                                "Андрей","Сергей","Игорь","Лев","Борис","Вадим","Михаил","Радик",
++                                "Радмир","Динар","Денис","Дмитрий","Анна","Юлия","Ирина","Дина",
++                                "Наталья","Евгения","Лиана","София","Регина","Крестина" };
++        int oneLength = wordListOne.length;
++        Person[] PersonArray = new Person[1000];
++        /** заполним массив */
++        for (int i = 0; i<1000; i++) {
++
++            int rand2 = rnd(1,100);
++            String rand3 = GetGender((int) (Math.random() *2));
++            int rand1 = (int) (Math.random() * oneLength);
++
++            PersonArray[i] = new Person(rand2,rand3,wordListOne[rand1]);
++        }
++        /**Вызов методов сортировки */
++        System.out.println("~~~~~ без сортировки");
++        for(Person person: PersonArray)
++            System.out.println( person.getName()  +" "+ person.GetAge() +" "+ person.getGenderPerson() );
++
++        System.out.println("\n сортировка по имени и полу");
++        long start = System.currentTimeMillis();
++        Arrays.sort(PersonArray, new SortedByName());
++        long finish = System.currentTimeMillis();
++        long timeConsumed = finish - start;
++        System.out.println("\n Время обработки :"+timeConsumed);
++
++        for(Person person: PersonArray)
++            System.out.println( person.getName() + " " + person.GetAge()+" " + person.getGenderPerson() );
++
++        System.out.println("\n сортировка по возрасту");
++        start = System.currentTimeMillis();
++        Arrays.sort(PersonArray, new SortedByAge());
++        finish = System.currentTimeMillis();
++        timeConsumed = finish - start;
++        System.out.println("\n Время обработки :"+timeConsumed);
++
++        for(Person person: PersonArray)
++            System.out.println( person.getName() +" "+ person.GetAge() +" "+ person.getGenderPerson() );
++        System.out.println("\n общая соритровка");
++        Comparator<Person> pcompare = new SortedByName().thenComparing(new SortedByAge());
++        start = System.currentTimeMillis();
++        Arrays.sort(PersonArray, pcompare);
++        finish = System.currentTimeMillis();
++        timeConsumed = finish - start;
++        System.out.println("\n Время обработки :"+timeConsumed);
++
++        for(Person person: PersonArray)
++            System.out.println( person.getName() +" "+ person.GetAge() +" "+ person.getGenderPerson() );
++
++    }
++}
+diff --git out/production/HelloApp/com/example/person/Sex.class out/production/HelloApp/com/example/person/Sex.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..87ad5547a7f710b5eca29c144d724db3ef096233
+GIT binary patch
+literal 385
+zc${reu};G<6g<<W38AH>Kq(s|Fp#Ai2ni}Nl?JIO%uZ?*SBYIY2`Zn(gv7uH@KK0o
+zg9HQ1-MiE2J)b{5-`)X?FbvVau8%z*`wZSge0w!z=uejXiAOnCi)dCEsTSu9ov~JB
+z#Z{H?ycPil3=K*LIACa9NF}RFa*j_DhUQq$1w(ftm6+B=D$G4kb72?jjOPhA(&`_x
+zSv|^<VK~Wj5s5V~R=J2)!jxJ?GqI-A;Y`;i6F1WBh|OG>>*qU{II}NpBg7WN;Qs{-
+zz27=<x)fPutLlO)TY)PaVS~N_gokLt0~K=0CmsCJn>4}RB5u<Z5nIPQeFb}Qkq%+Y
+TnLf4&+us3n(IaNqajE_nVNp)E
+
+diff --git out/production/HelloApp/com/example/person/SortedByName.class out/production/HelloApp/com/example/person/SortedByName.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..06331ea625b5890842b6ee71d6edcf14b4a17c21
+GIT binary patch
+literal 1002
+zc$|e&U2hUW6g|V&>beN6RIQcP)(X3T-DpgVp&_x28WU_yX!<_D1Q%hKY!_pHgTKK4
+zz>6=K_+WhYHyPvEkHn9*_;BamIdjjs_s-1spI^QLc!V7tm$0rQiwzxjuo*^M8t&@Q
+zu&v>qhKh!&KyKG@ouDO<HmzfU%)ZxG0)@8Ys)OmctNbI`9T8b>dp$WimcA426EG9J
+zaZUs_+dXe=tM_s|87X_B{1eZ$JDwk?{@&?<9IK{)#*~TlNqS<Qm;O3(%>_r+OBVFH
+z!v_Lu3)14GhXTT<k(2KPviJ6toFq+G&Gt~fllDlu1N*Q$RK1{i7743e?l=Qi2Gg+X
+zXBUyCfitrAqv2%W`MV2RYq2@K<4ygZdhSG*dg%9+zjqp+?}T~=bX+lD!qQMPP)EbS
+zeOLmk7wQ^V!m_}|e;z@g`0oe;rSoRsYYkKob4sT5$K;*BcichqFR2*gZ6z;!<O!^p
+zXG!6W7O49|xg0ufoj+6KKP8!;HcjL3+!>5)dO@G9eTMkNAcZ{FTm)|6Dpw;;KmkR1
+z5ne+={=n=EeWgA}szIA0-70@Xwmc(}A(Huxq-Rm_Q2jd9$f8D-S|-+EVH>rmS}j&g
+zs)f-tl%ftQSYebR>lPJmQ0pd94XGb|m!;xUHny5H_Lzs^ocUV)8?p`B9J$$o>GDav
+N6t%;34Ywm-{ssDK<E;Py
+
+diff --git out/production/HelloApp/com/example/helloworld/HelloWorld.class out/production/HelloApp/com/example/helloworld/HelloWorld.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..e9bb90124a965fd3940b24bbf84d47e96561886a
+GIT binary patch
+literal 554
+zc$|e$%SyvQ6g{_(q{e9a(E8d~-BbmG;I87PATHtqDs|y%nhteJ9wklH-*Thi!VmDH
+z#5-xF8>KTa_jT?$hxz*c_yll@9Sa4lSy)Hi#D<AYf^nuIm7Wvw&4VtX(2o0(;CL#M
+z*ORa(lRME1xKs6FUj$u|C|%E*h4fL43HzQOhpv1P;V6*qqYQ%hIZlGUd#TfVowgVp
+z3KbFR%?EENo`f5SXyA6zL`8#ECM}Wylhyth6G~TdJQf3aLfHFH?Uu2r#xdUN#FNCA
+z7fRc7=01)!w~ZnU6I(X6VGtS%-4n`lPdB}x^i#s_A{zvI^qaGFG?3@-*Cz+k7Wg%}
+zayb&m;^8~!H5-@sHL~UsU%;LMU|~7y*;tt^w>joGn&ch5Ava%NWi`Ozs?1cCjHW(?
+R^32I_MV?hM^=ekvegK8Fd)WX0
+
+diff --git out/production/HelloApp/com/example/helloworld/printHelloWorld.class out/production/HelloApp/com/example/helloworld/printHelloWorld.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..783e82b7b73f763ceb634684904c67dc991817d7
+GIT binary patch
+literal 690
+zc$|$<U279T6g@XdvuSKhnzm6}KNcVA)<TzpZ<Rt3MPXZol#290Cfi{%b#^vvCfdK{
+zQ$ax=h5n{edS@EQOGOv<-aYr8d(NHNi>n{M0K7ohL>>17JZNCGi3-*NJPh!NP=Be6
+zvb%(8v~fhJy(&&5p`9or4<`9QmWN`XxzbIFROlm7Du<`VnjNY!AxhFBkL8)jM_R^1
+zsde$KDD_D^DwVNs9scO>4o~Dl8A2~QPEN&F5o=+xxNn)4?RbAtW~{h$OPkQxm*cU>
+z<Tl~y-z+~kOUGk=t8Yd6WnYZ^x&a;&n*Cx@rt*z)>$hjCZ8^II1Zc4K%=(?yG81~Q
+z%qF=s_VrmRM^+Vlg0;h;48^n_rox!Qh65RziPlc%31R*JZiUd98NMH!%G46Ve;tpo
+z65V!%2r<XM+C3G1`9L7d^H<E7IL|#l2YvVLCdaxjhPcCV;fBDu#d#ig(Vh-}M%BwL
+zQnL96t)HlT>Q>KD`|X6PUZ{&2$91MXW6=m5Y<SV$%^>4NZ`x+&63Z?#;@vLM39!Pr
+I=ezf=0Srl`ng9R*
+
+diff --git out/production/HelloApp/META-INF/HelloApp.kotlin_module out/production/HelloApp/META-INF/HelloApp.kotlin_module
+new file mode 100644
+index 0000000000000000000000000000000000000000..a49347afef10a9b5f95305e1058ba36adec7d6dd
+GIT binary patch
+literal 16
+Rc${NkU|?ooU|@t|0RRA102TlM
+
+diff --git out/production/HelloApp/com/example/person/Person.class out/production/HelloApp/com/example/person/Person.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..46f0560d24671cf44494acb778ea8dd7e4d08876
+GIT binary patch
+literal 770
+zc${@nO-sW-5Ph4()YfQgzqHnGJ+wj1#hW6ipa?~UO7GiriIFrZF^c{t4+<8+gFnC@
+zB~CU)QDb0dXW!0yZzlWx@%jc}8|yjfSjb`wi*Z<r!*T{I8LTp>`;K5>Ck)yt?^9ZA
+zUGZCPdE9rbb`-k4v%_E<3%@7Aa}iz#K7+pN`fjwx&}f|eE&q!&J0yP?^hiG6a(!`n
+z)9;G#f_FV>7}(tF@X(FVBT$Pj-D`$=%MSXMxa0kSC#-?Aw~{WXE0xE+>yGS=IKCVp
+z<A^93rQB$y4Wl26NKUObnlyKw>VJ-xYX>)>Esk8--dRXj2lvV4R;*{hz?y*!#tlp$
+zXCR9lL+#&I84BNRoOQ2+9ZB;Jmgy;UdL)$=$sztoOzsnM*Fb+ClN6`u<Ut_>D4Q=}
+zW_<|7+!#VNH;2%k2v?A&SS3}UNR=g0D-*LqSrr9B&4iC>x`)h4<jZ7MCPzhP70OgX
+ztC$%%TeQbjW9Boo$1f{gg0oWEND4;MjL=#NS$X(HuBVdcQk~V`&Wow!x~!W21Sleb
+A!2kdN
+
+diff --git out/production/HelloApp/com/example/helloworld/PrintMess.class out/production/HelloApp/com/example/helloworld/PrintMess.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..0376a11751c958369a84671a74167bce66d0ded9
+GIT binary patch
+literal 533
+zc$|e$$xZ?>82-vK!;FI<i2H(`z!>LZ;sN8u#CRB&1cT=?G*B`NnHgLjOAnfO@Bw@%
+z<3B}F6BC=XfBS9i-?#UdR{;CiG@)V6Kn2wT=1tVFpkq<T5`%Uq1DPB#WE;&6L+&{2
+z35Jp*193j~yCS;cU5}886S~~%@JOcTPcWAZWX!PbxS?;0JMND>VGo4og|}hk_3X<?
+z2FaO-;}(N8`a1AFS<QAhj$Cmf)11<2>bXumdqaN1E$ArdShlc&RfeLXck4>9rDM&)
+zIyM;U|6R*aPUCEk2YvgZI}~p63u@oTiSViSa7;waQH%^H0qrCb+^3gU|9}~E)sGjD
+zui^ZNObG6`njO@Ur(aJ;h9)%x27`7sRYo<x^9=T&Xp>e=fmzJZYE1-Gi&PnAr{)7v
+dr=0PKOeOn-+;@Pf?#Yu>`w?PHLrO|n{s1hga*F@}
+
+diff --git out/production/HelloApp/com/example/array/NumberGenerator.class out/production/HelloApp/com/example/array/NumberGenerator.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..07a90f58c6cab2f09b7b55b6538edf03a02eca09
+GIT binary patch
+literal 1637
+zc$|$@OK%%h6#lMXGnr0acAUCR0uH6%^bzxHNt}exnwGRqTIv!A4TT$fNG7#soXHs4
+z6#^l;sMxTn1QJ59=z>K>M4gC8-LZfT?%x54@?ATSkeG+1`#9%(=bn4MbLRTz-+#Cd
+z;5n2G3?QRntPSIsFc83tYB#ClB?G5$T4}O6Ue<8NfPsvf&T4qYKsz!zrqp^)P3P5=
+zQ$EuMW^h5r#mMC2X#66R%@xY>s*Xz<@)|A+M8<5#_9p~_si9ec&}p}533TRc$C{~@
+z7cB3xTqsc!&AA0xnw6fd<Sk{$U$R#P4&@4NIc;5+<x0s)OV5)x(oN^HmScI+cfAb3
+zWobJCy{Rj?W%-^=m!z|p&ikJ2EM`<_vBHt%C~`;+n`4T8(pzMZSPM6SfI2ePv{Ze&
+zl+G8V!<aM)TEsOb=1E80e;ad2Iz_ikNPFIwg=^EY(#S`{FsneC1&q8~^$OM*TV>g^
+zE0<w)l8Hy~s6h9g$QoWVk;be7yl&zR%n1zDKdZ0R@72GrZ#?*@elPjp6AGL4`)YfW
+zx(}6*oJo!*HN0u!3g%6`g{uOo|K)goG%3)vJ3kX|;~jzhyIDI`wM#|IBX@G#gv5fH
+z3MPuMOuUPE4T~n0K=uPG1T2Fb28!bXga29OKX1{9c41-JD)@g><!`L|R#_n4EQal-
+zr<_XF=e;bc>XAsbG^p+fx>bLt<3*;j?HFsJ76@0AM6Xoqj?*0Lx<925Y<_l{q2#Pv
+zZS*!(Y{rPJR4j)bdA!vbdsJK8@<#os?7x|H-)*YcUa7r6BDBWkOKjbaZR@o3m-t1j
+zu6Vq3h#`2zV8wl(xu&v|Fo=G>Ch8Y}P%X+iNh!@$a19?>hxo2x9#qdlQ;Ekon_K%s
+zP;W*X4&#ZYv$%^8tw4Pffw?sV*AdFCAsmg=pdGD2A6G)#mN2miV{RS$Mnl09;dr?J
+z8+>sfRD(GZA!-xtv~@%~Yv@YQy}O2J4Y7E5;43(Z$Od{w^c}Fcg6V(35_%7MS9_4y
+zz`+q?2d+=yjBT7TaP#)(82IOtJ`RgJ4=u$*u))JQL>mn3;|m%?2NLLH=3V5V8^g4n
+zq;>*5{F>vqie6aQj}M6Y6bEnz2XPmD_=&h*NVwv1p8Q$-qMk$wI#FX7;?Ce1w{V2J
+z2%g55IErKBo4n#Uqkz$WWTBoS>j`WSag0?ujBoJ_cR?b)#<Tpt2;q5R`w)CcNJPU4
+X4JU=r@B+*C8*cx~BLzkpB_90)^>&K-
+
+diff --git out/production/HelloApp/com/example/person/OrderByPerson.class out/production/HelloApp/com/example/person/OrderByPerson.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..b432b7ab041f6f36444eab4efff5a5beec3ead6f
+GIT binary patch
+literal 3886
+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
+Tu+0eF7M7ZbB=%{y4V(V~pL&Vi
+
+diff --git out/production/HelloApp/com/example/helloworld/PrintArray.class out/production/HelloApp/com/example/helloworld/PrintArray.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..e14cdc3397bb4b3ae56d5b61c57b0954284601bf
+GIT binary patch
+literal 649
+zc$|e%+e*Vg5It+trq*b+we^0#RRsg$TSX8-d<ZJU3*ytZUFw!3Tehj%&(a44K|jEc
+z5+`Xvl!6O8Gdq_vb7nuk-aY{AVIzYyCQMAGF_p&jAZ9R|!5rpIESOkiNbSo&h6fCZ
+z(&iO|ainU3A?wIMoVNXn&=<VoktgS<D)+9qmeITCG{QUCVpwsi%D2TM_nV%u?}X>6
+z2c^B5eXeB?9%{`yWlHwB3>b=~Tc^SAx$W_wZo46+)XQ;euImJr?-OQ7AGKSd@`Yx|
+zxT>wI;#fu#WKW`Q*HO2fsLaA3G7O`CA&BT<P}8DAhAVVkbWAK+SjLKpRSRoaXIT1|
+z#V_EqN<&n`-@Q7mQ24Y<)uuq9OGK(J0u3U#Ph9eS+ze(jdU>>=LaE<^un3d>GCBiv
+zi6$6^$g)W@(#fq?u%|d|kxa$TaSW5Rx(OITHZC2-Sg-gJMhrKVe8<2|BA0M)jGW;*
+q&q!`3cVCeD0USYs<TOFdU=p)2aIssA9P*^IG}Aa)(L9B?uJ{e;B#&VL
+
+diff --git out/production/HelloApp/com/example/person/SortedByAge.class out/production/HelloApp/com/example/person/SortedByAge.class
+new file mode 100644
+index 0000000000000000000000000000000000000000..0589b77fb982a2ad60b241b9edadea117c3e11ea
+GIT binary patch
+literal 910
+zc$|GwO>fgc5Pj>9m>P$sX-iv5LikQUREtttAXTKcDkxH*NI|`CoK<jeY-{Tv`a}2w
+z6~|n-6o~`k%zpwg-k1xtKJ3iw?3;OScK7G+Z{GoI;em|;DmHXfE!?tUqGsW?g*z7R
+zG8A_G&`+8SdVS@X!8nL|f?>MthvM~U*cI|E?*^19w<C`S$6Wg9K1&+OJO6~C*7l;I
+zD?ajJ90)fS@+1n~P9zi2+dtjwiw1*5h?q;Nc~-v&{YJS)&e2MX_@eIM5yNs0Yy#S(
+z!D8uqg3zq>cSG4?C*j`vS3J%pcvx=__y_I=JnXwi-GT6u#{Zd=d#dC2L!OM%84fQi
+z8YO<<9;i`y63N{hp-qx%ccPK>#0y{D@R95Zxqmu2-$?s8xPmDM_i&$K>C#pXrcq+3
+z=05^M>0i+da~G+m>v|~?RYISlg&KXC0_Y9tJL$AY6YXq@T=I;(x%w6C3k4dkk}as@
+z1{|`^1b`y0k!PvYtoRe5P4bnsb7;+VGTTOF-uMjD7?VGPsg3oq;!K-X75^rcJf{5<
+z%wQX{*ufH>Vj0gB+18|CMwUi1C@TRK!j=``BIYo!dX{mWA_EI*ChZqy8M8`zBylm5
+ixI?&f;^OMs59sT(&S8vm<}7B^8p%rS4U(4nn|}cQ`oxX^
+
