@@ -3,6 +3,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class NumberGenerator {
+    /**
+     * Метод для генерации числа в промежутке min и max
+     * @param max - максимальное числа для генерации
+     * @param min - минимальныное число для генерации
+     * @return возвращает число
+     */
+    static double rnd(int min, int max)
+    {
+        max -= min;
+        return (Math.random() * ++max) + min;
+    }
 
     public static void main(String[] args) {
 
@@ -16,8 +27,11 @@ public class NumberGenerator {
 
         for (int i = 0 ;i <=n ; i++){
 
-         double a = ran.nextDouble();
+         double a = rnd(-10,10);
             System.out.println("a=" + a );
+            if (a<0) {
+                throw new IllegalArgumentException("The argument cannot be negative");
+            }
             /** Для каждого числа k вычислить квадратный корень q*/
          if ( i == k ){
             double q = Math.sqrt(a) ;
