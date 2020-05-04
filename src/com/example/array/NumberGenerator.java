@@ -20,31 +20,20 @@ public class NumberGenerator {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите целое число N : ");
         int n = in.nextInt();
-        System.out.print("Введите целое число K: ");
-        int k = in.nextInt();
-
         Random ran = new Random();
 
         for (int i = 0 ;i <=n ; i++){
-
-         double a = rnd(-100,100);
-            System.out.println("a=" + a );
+         double a = rnd(1,100);
             if (a<0) {
                 throw new IllegalArgumentException("The argument cannot be negative");
             }
             /** Для каждого числа k вычислить квадратный корень q*/
-         if ( i == k ){
             double q = Math.sqrt(a) ;
-             System.out.println("q=" + q);
              /**Если квадрат целой части q числа рав k, то вывести это числ на экран.*/
-
-            double d = Math.pow( q%10,2);
-             System.out.println("d=" + d );
-
-            if (d == k){
-                System.out.println("q=" + q );
+            int d =(int) Math.pow( q%10,2);
+            if (d == i){
+                System.out.println("q2=" + q );
             }
          }
       }
-    }
 }
