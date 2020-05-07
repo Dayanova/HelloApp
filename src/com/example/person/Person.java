@@ -46,45 +46,22 @@ public class Person {
     public String getGenderPerson() {
         return genderPerson;
     }
-    /**
-     * Функция сравнения значений {@link Person#name}
-     * @return возвращает 1 если объект больше
-     *                   -1 если объект меньше
-     *                    0 если объекты равны */
-    public int compareToName(Person o) {
-        int result = this.name.compareTo(o.name);
-        if (result == 0) {
-          if (this.age == o.age) {
-                throw new ArithmeticException("duplication of values in an array");
 
-            }
-        }
-        return result;
-    }
     /**
      * Функция сравнения значений {@link Person#genderPerson}
      * @return возвращает 1 если объект больше
      *                   -1 если объект меньше
      *                    0 если объекты равны */
 
-    public int compareToGender(Person o) {
+    public int compareTo(Person o) {
         int result = this.genderPerson.compareTo(o.genderPerson);
-        return result;
-    }
-    /**
-     * Функция сравнения значений {@link Person#age}
-     * @return возвращает 1 если объект больше
-     *                   -1 если объект меньше
-     *                    0 если объекты равны */
-
-    public int compareToAge(Person o) {
-        if (this.age >o.age) {
-            return 1;
-        } else if (this.age < o.age) {
-            return -1;
-        } else {
-            return 0;
+        if (result!=0) return result;
+        result = this.age - o.age;
+        if(result != 0) {
+            return (int) result / Math.abs(result);
         }
+        result = this.getName().compareTo(o.genderPerson);
+        return result;
     }
 
 }

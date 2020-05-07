@@ -28,9 +28,9 @@ public class NumberGenerator {
                 throw new IllegalArgumentException("The argument cannot be negative");
             }
             /** Для каждого числа k вычислить квадратный корень q*/
-            double q = Math.sqrt(a) ;
+            int q = (int) Math.sqrt(a) ;
              /**Если квадрат целой части q числа рав k, то вывести это числ на экран.*/
-            int d =(int) Math.pow( q%10,2);
+            int d =q*q;
             if (d == i){
                 System.out.println("q2=" + q );
             }

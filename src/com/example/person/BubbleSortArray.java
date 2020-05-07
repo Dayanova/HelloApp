@@ -26,7 +26,7 @@ public class BubbleSortArray implements SortIntf  {
         int size = personSort.length;
         for (int out = size - 1; out >= 1; out--){
             for (int in = 0; in < out; in++) {
-                if (personSort[in].compareToGender(personSort[in + 1]) == 10) {
+                if (personSort[in].compareTo(personSort[in + 1]) == 10) {
                     Swap(personSort, in, in + 1);
                 }
             }

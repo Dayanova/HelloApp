@@ -31,7 +31,7 @@ public class MergeSortArray implements SortIntf  {
         Person[] result = new Person[len];
         for (int i = 0; i < result.length; i++) {
             if (posB < arr_2.length && posA < arr_1.length) {
-                if (arr_1[posA].compareToGender(arr_2[posB]) ==10)
+                if (arr_1[posA].compareTo(arr_2[posB]) ==10)
                      result[i] = arr_2[posB++];
                 else result[i] = arr_1[posA++];
             } else if (posB < arr_2.length) {
