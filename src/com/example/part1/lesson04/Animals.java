@@ -14,7 +14,7 @@ public class Animals {
         updateCat(1,Animals,newCat);
         newCat = searchCat("Smurf",Animals);
         System.out.println("Cat:" + newCat.getnickname() + " "+ newCat.getWeight() );
-        Map<Integer, Cat> sortedMap = sortByValue(Animals);
+        LinkedHashMap<Integer, Cat> sortedMap = sortByValue(Animals);
         printMap(sortedMap);
 
     }
@@ -85,7 +85,7 @@ static int rnd(int min, int max)
      * Функция сортировки картотеки животных @link Cat}
      * @return возвращает Map
      */
-    private static Map<Integer, Cat> sortByValue(Map<Integer,Cat> unsortMap) {
+    private static LinkedHashMap<Integer, Cat> sortByValue(Map<Integer,Cat> unsortMap) {
         List<Map.Entry<Integer, Cat>> list =
                 new LinkedList<Map.Entry<Integer, Cat>>(unsortMap.entrySet());
 
@@ -107,7 +107,7 @@ static int rnd(int min, int max)
                 return result;
             }
         });
-        Map<Integer, Cat> sortedMap = new HashMap<Integer, Cat>();
+        LinkedHashMap<Integer, Cat> sortedMap = new LinkedHashMap<>();
         for (Map.Entry<Integer, Cat> entry : list) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
