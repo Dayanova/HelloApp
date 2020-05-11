@@ -14,7 +14,6 @@ public class Animals {
         updateCat(1,Animals,newCat);
         newCat = searchCat("Smurf",Animals);
         System.out.println("Cat:" + newCat.getnickname() + " "+ newCat.getWeight() );
-
         Map<Integer, Cat> sortedMap = sortByValue(Animals);
         printMap(sortedMap);
 
@@ -64,7 +63,7 @@ static int rnd(int min, int max)
             }
             result.put(key, cat);
         }
-        return Collections.unmodifiableMap(result);
+        return result;
     }
     /**
      * Функция поиска по кличке в картотеке животных @link Cat}
@@ -93,15 +92,14 @@ static int rnd(int min, int max)
         Collections.sort(list, new Comparator<Map.Entry<Integer, Cat>>() {
             public int compare(Map.Entry<Integer, Cat> o1,
                                Map.Entry<Integer, Cat> o2) {
-               /* int result = o1.getValue().man.getName().compareTo(o2.getValue().man.getName());
-                if (result != 0) {
-                    return result;
-                }*/
-                int result = o1.getValue().getnickname().compareTo(o2.getValue().getnickname());
+                int result = o1.getValue().man.getName().compareTo(o2.getValue().man.getName());
                 if (result != 0) {
                     return result;
                 }
-
+                     result = o1.getValue().getnickname().compareTo(o2.getValue().getnickname());
+                if (result != 0) {
+                    return result;
+                }
                 result = (int) (o1.getValue().getWeight() - o2.getValue().getWeight());
                 if (result != 0) {
                     return result / Math.abs(result);
