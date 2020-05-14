@@ -3,8 +3,9 @@ package com.example.part1.lesson03.task01;
 import com.example.part1.lesson03.task02.ObjectBox;
 import com.example.person.Person;
 
-import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 /**
  * Класс MathBox с колекцией list
@@ -17,6 +18,7 @@ public class MathBox extends ObjectBox<Number> {
      */
     public MathBox(Number[] numbers) {
         super(numbers);
+
         for (int i = 0; i < numbers.length; i++) {
             if (this.sList.contains(numbers[i])) {
                 throw new ArithmeticException("duplication of values in an array");
@@ -24,6 +26,7 @@ public class MathBox extends ObjectBox<Number> {
             this.sList.add(numbers[i]);
         }
     }
+
 
     /**
      * метод расчитывающий сумму элементов коллекции
