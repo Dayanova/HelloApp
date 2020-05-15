@@ -5,7 +5,7 @@ package com.example.person;
  * @ author Dayanova
  * @ version 1.0
  */
-class Sex {
+public class Sex {
     public static final String WOMAN = "Woman";
     public static final String MAN = "Man";
 }
