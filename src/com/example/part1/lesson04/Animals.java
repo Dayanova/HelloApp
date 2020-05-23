@@ -1,59 +1,31 @@
 package com.example.part1.lesson04;
-
 import com.example.person.Person;
 import com.example.person.Sex;
 
 import java.util.*;
 
 public class Animals {
-    public static void main(String[] args) {
-        List<Cat> cats = getCat();
-        Map <Integer, Cat> Animals = generateAnimals(cats);
-        printMap(Animals);
-        Cat newCat = new Cat("Laim",6,new Person(rnd(1,10), Sex.MAN,"Ivan"));
-        updateCat(1,Animals,newCat);
-        newCat = searchCat("Smurf",Animals);
-        System.out.println("Cat:" + newCat.getnickname() + " "+ newCat.getWeight() );
-        LinkedHashMap<Integer, Cat> sortedMap = sortByValue(Animals);
-        printMap(sortedMap);
 
-    }
+    public  Map<Integer, Cat> animal =new HashMap<>();
 
-static int rnd(int min, int max)
-    {
-        max -= min;
-        return (int) (Math.random() * ++max) + min;
-    }
-    /**
-     * Функция генерации котиков @link Cat}
-     * @return возвращает List
-     */
-    private static List<Cat> getCat() {
-        return new ArrayList<>(Arrays.asList(
-                new Cat("Connor",5,new Person(rnd(1,10), Sex.MAN,"Tim")),
-                new Cat( "Smurf",4,new Person(rnd(1,10),Sex.WOMAN,"Alise")),
-              //  new Cat( "Smurf",4,new Person(rnd(1,10),Sex.WOMAN,"Alise")),
-                new Cat("Tigr",3,new Person(rnd(1,10), Sex.MAN,"Valentin")),
-             //   new Cat("Smurf",6,new Person(rnd(1,10),Sex.WOMAN,"Tatiana")),
-                new Cat("Dff",7,new Person(rnd(1,10),Sex.MAN,"Anatol")),
-                new Cat("Awer",2.5,new Person(rnd(1,10),Sex.MAN,"Micha"))
-        ));
+    public Animals(List<Cat> cats) {
+        this.animal=generateAnimals(cats);
     }
 
     /**
      * Функция обновления значения @link Cat}
      * @return возвращает обновленный Map
      */
-    private static void updateCat(Integer uniqueKey,Map<Integer,Cat> Animals,Cat o){
-        if (Animals.containsKey(uniqueKey)){
-            Animals.put(uniqueKey,o);
+    public void updateCat(Integer uniqueKey,Cat o){
+        if (this.animal.containsKey(uniqueKey)){
+            this.animal.put(uniqueKey,o);
         }
     }
     /**
      * Функция Гененарции картотеки животных @link Cat}
      * @return возвращает Map
      */
-    private static Map generateAnimals(List<Cat> animals) {
+    public Map generateAnimals(List<Cat> animals) {
         int key=0;
         Map<Integer, Cat> result = new HashMap<>();
         for (Cat cat : animals) {
@@ -69,11 +41,11 @@ static int rnd(int min, int max)
      * Функция поиска по кличке в картотеке животных @link Cat}
      * @return возвращает Map
      */
-    private static Cat searchCat(String nickname,Map<Integer,Cat> Animals){
+    public Cat searchCat(String nickname){
         Cat cat;
         Map<String, Cat> cats =new HashMap<>();
         List<Map.Entry<Integer, Cat>> list =
-                new LinkedList<Map.Entry<Integer, Cat>>(Animals.entrySet());
+                new LinkedList<Map.Entry<Integer, Cat>>(this.animal.entrySet());
 
         for (Map.Entry<Integer, Cat> entry : list) {
             cats.put(entry.getValue().nickname, entry.getValue());
@@ -85,9 +57,9 @@ static int rnd(int min, int max)
      * Функция сортировки картотеки животных @link Cat}
      * @return возвращает Map
      */
-    private static LinkedHashMap<Integer, Cat> sortByValue(Map<Integer,Cat> unsortMap) {
+    public LinkedHashMap<Integer, Cat> sortByValue() {
         List<Map.Entry<Integer, Cat>> list =
-                new LinkedList<Map.Entry<Integer, Cat>>(unsortMap.entrySet());
+                new LinkedList<Map.Entry<Integer, Cat>>(this.animal.entrySet());
 
         Collections.sort(list, new Comparator<Map.Entry<Integer, Cat>>() {
             public int compare(Map.Entry<Integer, Cat> o1,
@@ -118,8 +90,8 @@ static int rnd(int min, int max)
      * @return возвращает Map
      */
 
-    public static void printMap(Map<Integer, Cat> map) {
-        for (Map.Entry<Integer, Cat> entry : map.entrySet()) {
+    public void printMap() {
+        for (Map.Entry<Integer, Cat> entry : this.animal.entrySet()) {
             System.out.println("Key : " + entry.getKey()
                     + " Value :< Nick= " + entry.getValue().getnickname()
                     + " weight=" + entry.getValue().getWeight()
