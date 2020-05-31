@@ -17,7 +17,7 @@ public class MessageSender implements Runnable {
     private void pressNickname() {
         System.out.print("Press your nick: ");
         try {
-            nickname = inputUser.readLine() ;
+            nickname ="#" + inputUser.readLine() + "#";
         } catch (IOException ignored) {
         }
 
