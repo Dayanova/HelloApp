@@ -1,9 +1,11 @@
 package com.example.part1.lesson07.Task1;
 
+import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 public class Main {
@@ -17,7 +19,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-
         Integer[] randomArr = new Integer[10];
         for (int i = 0; i < randomArr.length; i++) {
             randomArr[i] = rnd(1, 100);
@@ -25,18 +26,19 @@ public class Main {
         long start = System.currentTimeMillis();
         System.out.println("Start : " + start);
 
-        for (int i = 0; i < randomArr.length; i++) {
-            System.out.println("randomArr[" + i + "]=" + randomArr[i]);
+        //Stream api
+        Arrays.stream(randomArr).forEach(n -> doSomething(n));
 
-            Future<Integer> factorial = es.submit(new Factorial(randomArr[i]));
-            double result = factorial.get();
+        Arrays.stream(randomArr).forEach(System.out::println);
 
-            System.out.println("result= " + factorial.get());
-        }
         long finish = System.currentTimeMillis();
         System.out.println("finish : " + finish);
         System.out.println("resultTime : " + (finish - start));
 
+    }
+
+    public static void doSomething(Integer n){
+        Future<Integer> factorial =es.submit(new Factorial(n));
     }
 
 }
