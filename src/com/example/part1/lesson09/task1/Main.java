@@ -34,11 +34,14 @@ public class Main {
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, null);
         File parentDirectory = fl.getParentFile();
+        System.out.println(parentDirectory.getPath());
         fileManager.setLocation(StandardLocation.CLASS_OUTPUT, Arrays.asList(parentDirectory));
         Iterable<? extends JavaFileObject> compilationUnits = fileManager.getJavaFileObjectsFromFiles(Arrays.asList(fl));
         compiler.getTask(null, fileManager, null, null, null, compilationUnits).call();
         fileManager.close();
-        System.out.println("Компиляция завершена1");
+
+        System.out.println("Компиляция завершена");
+
         ClassLoader cl = new MyClassLoader();
         Class<?> MyClass = cl.loadClass(classname);
         MyClass.getMethod("doWork").invoke(MyClass.newInstance());
