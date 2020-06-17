@@ -123,7 +123,11 @@ public class ClientDAO implements GeneralDAO<Client> {
 
     @Override
     public List<Client> getAll() {
+<<<<<<< HEAD
         List<Client> list = new ArrayList<>();
+=======
+        List<Client> list = null;
+>>>>>>> 29408ff... JDBC  example for Firebird
         String sql ="SELECT * FROM Client" ;
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();

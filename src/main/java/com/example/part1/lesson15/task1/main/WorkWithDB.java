@@ -33,12 +33,12 @@ public class WorkWithDB {
         List<Order> ORDER = getOrder();
        OrderDAO orderDAO = new OrderDAO(log, dbs.getConnection());
        orderDAO.usePreparedStatement(ORDER);
-       List<Order> result =orderDAO.getAll();
+    /*  List<Order> result =orderDAO.getAll();
 
        for (Order order: result){
             System.out.println(order.toString());
         }
-
+*/
     }
 
     static List<Order> getOrder() {

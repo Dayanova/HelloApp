@@ -2,7 +2,6 @@ package com.example.part1.lesson15.task1.db;
 
 import com.example.part1.lesson15.task1.Model.Product;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -104,7 +103,7 @@ public class ProductDAO implements GeneralDAO<Product> {
 
     @Override
     public List<Product> getAll() {
-        List<Product> list = new ArrayList<>();
+        List<Product> list = null;
         String sql = "SELECT * FROM Product";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();
