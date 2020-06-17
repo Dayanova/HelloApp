@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Firebird.interbase - jdbc:firebirdsql://localhost:3050/C:/Users/Фаягуль/IdeaProjects/HelloApp/src/com/example/part1/lesson15/task1/db/STORE.FDB" uuid="fc2c9444-eaa1-4583-be3b-55e436efabb9">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.firebirdsql.jdbc.FBDriver</jdbc-driver>
+      <jdbc-url>jdbc:firebirdsql://localhost:3050/$PROJECT_DIR$/src/com/example/part1/lesson15/task1/db/STORE.FDB</jdbc-url>
+    </data-source>
+  </component>
+</project>
