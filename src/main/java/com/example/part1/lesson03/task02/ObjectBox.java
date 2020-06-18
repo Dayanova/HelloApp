@@ -1,11 +1,25 @@
 package com.example.part1.lesson03.task02;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class ObjectBox <T> {
+public class ObjectBox <T> {
 
-    private List<T> sList;
 
+    public HashSet<T> sList= new HashSet<>();
+    private T value;
+
+    public ObjectBox(T[] o) {
+        for (int i = 0; i < o.length; i++) {
+            sList.add(o[i]);
+        }
+    }
+
+    /**
+     *
+     * @param val
+     */
     public void add(T val) {
          sList.add(val);
     }

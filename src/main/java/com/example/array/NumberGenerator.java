@@ -1,16 +1,17 @@
 package com.example.array;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class NumberGenerator {
     /**
      * Метод для генерации числа в промежутке min и max
+     *
      * @param max - максимальное числа для генерации
      * @param min - минимальныное число для генерации
      * @return возвращает число
      */
-    static double rnd(int min, int max)
-    {
+    static double rnd(int min, int max) {
         max -= min;
         return (Math.random() * ++max) + min;
     }
@@ -22,18 +23,18 @@ public class NumberGenerator {
         int n = in.nextInt();
         Random ran = new Random();
 
-        for (int i = 0 ;i <=n ; i++){
-         double a = rnd(1,100);
-            if (a<0) {
+        for (int i = 0; i <= n; i++) {
+            double a = rnd(1, 100);
+            if (a < 0) {
                 throw new IllegalArgumentException("The argument cannot be negative");
             }
             /** Для каждого числа k вычислить квадратный корень q*/
-            int q = (int) Math.sqrt(a) ;
-             /**Если квадрат целой части q числа рав k, то вывести это числ на экран.*/
-            int d =q*q;
-            if (d == i){
-                System.out.println("q2=" + q );
+            int q = (int) Math.sqrt(a);
+            /**Если квадрат целой части q числа рав k, то вывести это числ на экран.*/
+            int d = q * q;
+            if (d == i) {
+                System.out.println("q2=" + q);
             }
-         }
-      }
+        }
+    }
 }
