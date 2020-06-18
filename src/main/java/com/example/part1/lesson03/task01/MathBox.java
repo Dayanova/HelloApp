@@ -18,7 +18,6 @@ public class MathBox extends ObjectBox<Number> {
      */
     public MathBox(Number[] numbers) {
         super(numbers);
-
         for (int i = 0; i < numbers.length; i++) {
             if (this.sList.contains(numbers[i])) {
                 throw new ArithmeticException("duplication of values in an array");
