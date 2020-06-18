@@ -49,11 +49,9 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", client=" + client.getName() +
-                ", product=" + product.getName() +
-                ", OrderDate=" + OrderDate +
-                '}';
+        return "Order{" + "id=" + id
+                + ",client=" + client.getName()
+                + ",product=" + product.getName()
+                + ",OrderDate=" + OrderDate + '}';
     }
 }

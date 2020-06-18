@@ -3,6 +3,7 @@ package com.example.part1.lesson15.task1.db;
 import com.example.part1.lesson15.task1.Model.Client;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 import java.util.List;
 
@@ -122,7 +123,7 @@ public class ClientDAO implements GeneralDAO<Client> {
 
     @Override
     public List<Client> getAll() {
-        List<Client> list = null;
+        List<Client> list = new ArrayList<>();
         String sql ="SELECT * FROM Client" ;
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();

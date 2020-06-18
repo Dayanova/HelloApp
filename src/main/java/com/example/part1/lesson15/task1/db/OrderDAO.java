@@ -5,6 +5,7 @@ import com.example.part1.lesson15.task1.Model.Product;
 import com.example.part1.lesson15.task1.Model.Order;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -113,27 +114,33 @@ public class OrderDAO implements GeneralDAO<Order> {
 
     @Override
     public List<Order> getAll() {
-        List<Order> list = null;
+        List<Order> list = new ArrayList<>();
         ClientDAO clientDAO = new ClientDAO(this.logger,this.connection);
         ProductDAO productDAO = new ProductDAO(this.logger,this.connection);
-        String sql = "SELECT * FROM Order_1";
+        String sql = "SELECT cl.Name as clName, " +
+                            "cl.Address as clAddress, " +
+                            "pr.Name as ProductName, " +
+                            "pr.Description as ProductDescr, " +
+                            "pr.Price as ProductPrice, " +
+                            "ord.id as OrderId, " +
+                            "ord.ClientId, ord.IdProduct, ord.OrderDate "+
+                            "FROM Order_1 ord, Client cl,Product pr " +
+                            "where cl.id=ord.ClientId " +
+                            "and pr.id=ord.IdProduct";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
-                Order order = new Order(rs.getInt("id"),
-                                        clientDAO.getByPK(rs.getInt("ClientId")),
-                                        productDAO.getByPK(rs.getInt("IdProduct")) ,
-                                        null);
-                boolean bool = rs.isClosed();
-                if(bool) {
-                    System.out.println("ResultSet is closed");
-                } else {
-                    System.out.println("ResultSet is not closed");
-                }
+                Order order = new Order(rs.getInt("OrderId"),
+                                        new Client( rs.getInt("ClientId"),
+                                                    rs.getString("clName"),
+                                                    rs.getString("clAddress")),
+                                        new Product(rs.getInt("IdProduct"),
+                                                    rs.getString("ProductName"),
+                                                    rs.getString("ProductDescr"),
+                                                    rs.getInt("ProductPrice")),
+                                        rs.getDate("OrderDate"));
                 list.add(order);
             }
-
-
         } catch (Exception e) {
             logger.warning( e.getMessage());
         }
