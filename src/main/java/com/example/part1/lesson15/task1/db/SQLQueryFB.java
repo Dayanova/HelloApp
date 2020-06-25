@@ -1,7 +1,7 @@
 package com.example.part1.lesson15.task1.db;
 
 import java.sql.*;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class SQLQueryFB {
     private Logger logger;
@@ -31,7 +31,7 @@ public class SQLQueryFB {
         try {
             statement.execute(strSQL);
         } catch (SQLException e) {
-            logger.info("Ошибка statement.execute: " + e.getMessage());
+            logger.error("Ошибка statement.execute: " + e.getMessage());
             return false;
         }
         return true;
@@ -40,7 +40,7 @@ public class SQLQueryFB {
     public void createTable() {
         String strSQL = null;
         try {
-            logger.info("Создание таблицы Client");
+            logger.debug("Создание таблицы Client");
             if (!isTableExists("Client")) {
                 strSQL = "CREATE TABLE Client (" +
                         "id INTEGER PRIMARY KEY," +
@@ -48,11 +48,11 @@ public class SQLQueryFB {
                         "Address CHAR (255)" +
                         ")";
                 execStatement(strSQL);
-                strSQL = " CREATE SEQUENCE Client_id;";
-                execStatement(strSQL);
+              //  strSQL = " CREATE SEQUENCE Client_id;";
+               // execStatement(strSQL);
             }
 
-            logger.info("Создание таблицы Order");
+            logger.debug("Создание таблицы Order");
             if (!isTableExists("Order_1")) {
                 strSQL = "CREATE TABLE Order_1 (" +
                         "id INTEGER PRIMARY KEY," +
@@ -61,10 +61,11 @@ public class SQLQueryFB {
                         "OrderDate DATE" +
                         ")";
                 execStatement(strSQL);
-                strSQL = " CREATE SEQUENCE Order_1_id;";
-                execStatement(strSQL);
+               // strSQL = " CREATE SEQUENCE Order_1_id;";
+              //  execStatement(strSQL);
             }
-            logger.info("Создание таблицы Product");
+
+            logger.debug("Создание таблицы Product");
             if (!isTableExists("Product")) {
                 strSQL = "CREATE TABLE Product (" +
                         "id INTEGER PRIMARY KEY," +
@@ -74,10 +75,22 @@ public class SQLQueryFB {
                         ")";
                 execStatement(strSQL);
                 //strSQL = " CREATE SEQUENCE Product_id;";
-               // execStatement(strSQL);
+                // execStatement(strSQL);
+            }
+
+            logger.debug("Создание таблицы APP_LOGS");
+            if (!isTableExists("APP_LOGS")) {
+                strSQL = "CREATE TABLE APP_LOGS (" +
+                        "LOG_ID         INTEGER   ,"+
+                        "ENTRY_DATE     DATE ,"+
+                        "LOGGER         VARCHAR(50) ," +
+                        "LOG_LEVEL      VARCHAR(10)  ,"+
+                        "MESSAGE        VARCHAR(1000)," +
+                        "EXCEPTION      VARCHAR(1000) );";
+                execStatement(strSQL);
             }
         } catch (Exception e) {
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
 
     }
@@ -91,7 +104,7 @@ public class SQLQueryFB {
                 return resultSet.next();
             }
         } catch (SQLException e) {
-            logger.info("Ошибка обращения к таблице: " + tableName);
+            logger.error("Ошибка обращения к таблице: " + tableName);
         }
         return false;
     }

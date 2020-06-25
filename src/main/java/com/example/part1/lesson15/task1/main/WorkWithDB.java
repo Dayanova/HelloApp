@@ -14,30 +14,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class WorkWithDB {
 
     public static void main(String[] args) throws SQLException {
-        Logger log = Logger.getGlobal();
+        Logger log = LogManager.getLogger(WorkWithDB.class);
         AccessToFB dbs = new AccessToFB(log) ;
         Boolean s = dbs.getAccess();
         SQLQueryFB qr = new SQLQueryFB(log, dbs.getConnection());
-      //  qr.deleteAllDataFromTable("Order_1");
-      //  qr.deleteAllDataFromTable("Client");
-      //  qr.deleteAllDataFromTable("Product");
-      //  qr.DropFromTable("Order_1");
-     //   qr.DropFromTable("Client");
-    //    qr.DropFromTable("Product");
+        //  qr.deleteAllDataFromTable("Order_1");
+        //  qr.deleteAllDataFromTable("Client");
+        //  qr.deleteAllDataFromTable("Product");
+        //  qr.DropFromTable("Order_1");
+        //   qr.DropFromTable("Client");
+       //     qr.DropFromTable("APP_LOGS");
         qr.createTable();
         List<Order> ORDER = getOrder();
-       OrderDAO orderDAO = new OrderDAO(log, dbs.getConnection());
-       orderDAO.usePreparedStatement(ORDER);
-       List<Order> result =orderDAO.getAll();
+        OrderDAO orderDAO = new OrderDAO(log, dbs.getConnection());
+        //orderDAO.usePreparedStatement(ORDER);
+       // List<Order> result =orderDAO.getAll();
 
-       for (Order order: result){
+      /*  for (Order order: result){
             System.out.println(order.toString());
-        }
+        }*/
 
     }
 
@@ -47,7 +48,7 @@ public class WorkWithDB {
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
         return new ArrayList<>(Arrays.asList(
                 new Order(1,new Client(1,"Alis","Moscow"),
-                                new Product(1,"tea","El",15),sqlDate),
+                        new Product(1,"tea","El",15),sqlDate),
                 new Order(2,new Client(2,"Tea","London"),
                         new Product(2,"Car","El",100), sqlDate),
                 new Order(3,new Client(3,"Mary","Paris"),

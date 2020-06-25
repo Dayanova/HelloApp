@@ -3,7 +3,7 @@ package com.example.part1.lesson15.task1.db;
 
 import java.util.Objects;
 import java.util.Properties;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.nio.file.Files;
@@ -18,15 +18,15 @@ public class AccessToFB {
     private static final String JDBC = "jdbc:firebirdsql://";
     private static final String JDBC_PORT = ":3050/";
 
-    private Connection connection = null;
-    private Logger logger = null;
+    private Connection connection;
+    private Logger logger;
 
     private boolean connectToDB() {
 
         try {
             Class.forName("org.firebirdsql.jdbc.FBDriver");
         } catch (ClassNotFoundException e) {
-            logger.info("connectToDB: Firebird JCA-JDBC драйвер не найден");
+            logger.error("connectToDB: Firebird JCA-JDBC драйвер не найден");
             return false;
         }
         try {
@@ -37,11 +37,12 @@ public class AccessToFB {
             connInfo.put("charSet", "Cp1251");
 
             connection = java.sql.DriverManager.getConnection(strConnect, connInfo);
+            System.out.println("strConnect =" + strConnect);
             logger.info("connectToDB: БД подключена через JDBC драйвер");
             // выключим режим автокоммтов
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            logger.info("connectToDB: ошибка подключения к БД через JDBC драйвер " + e.getMessage());
+            logger.error("connectToDB: ошибка подключения к БД через JDBC драйвер " + e.getMessage());
             return false;
         }
         return true;
@@ -70,27 +71,27 @@ public class AccessToFB {
     private boolean setAccessParam() {
         strConnect ="C:\\Users\\Фаягуль\\IdeaProjects\\HelloApp\\src\\main\\java\\com\\example\\part1\\lesson15\\task1\\db\\STORE.FDB";
         if (!Files.exists(Paths.get(strConnect), LinkOption.NOFOLLOW_LINKS)){
-            logger.info("Нет найден файл БД: "+strConnect);
+            logger.error("Нет найден файл БД: "+strConnect);
             return false;
         }
         if (Objects.equals(strConnect, "")) {
-            logger.info("Нет доступа к БД: отсутствует путь к файлу БД");
+            logger.error("Нет доступа к БД: отсутствует путь к файлу БД");
             return false;
         }
         strConnect = JDBC + "localhost" + JDBC_PORT + strConnect;
-        logger.info("Connect: " + strConnect);
+        logger.debug("Connect: " + strConnect);
 
         strUser = "";
         if (Objects.equals(strUser, "")) {
             strUser = "SYSDBA";
         }
-        logger.info("User: " + strUser);
+        logger.debug("User: " + strUser);
 
         strPass = "";
         if (Objects.equals(strPass, "")) {
             strPass = "masterkey";
         }
-        logger.info("Password: " + strPass);
+        logger.debug("Password: " + strPass);
         return true;
     }
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class OrderDAO implements GeneralDAO<Order> {
     private Logger logger;
@@ -40,9 +40,9 @@ public class OrderDAO implements GeneralDAO<Order> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
             e.printStackTrace(System.out);
         }
         return null;
@@ -67,9 +67,9 @@ public class OrderDAO implements GeneralDAO<Order> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning( e.getMessage());
+            logger.error( e.getMessage());
         }
 
     }
@@ -89,9 +89,9 @@ public class OrderDAO implements GeneralDAO<Order> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning( e.getMessage());
+            logger.error( e.getMessage());
         }
     }
 
@@ -106,9 +106,9 @@ public class OrderDAO implements GeneralDAO<Order> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -118,31 +118,31 @@ public class OrderDAO implements GeneralDAO<Order> {
         ClientDAO clientDAO = new ClientDAO(this.logger,this.connection);
         ProductDAO productDAO = new ProductDAO(this.logger,this.connection);
         String sql = "SELECT cl.Name as clName, " +
-                            "cl.Address as clAddress, " +
-                            "pr.Name as ProductName, " +
-                            "pr.Description as ProductDescr, " +
-                            "pr.Price as ProductPrice, " +
-                            "ord.id as OrderId, " +
-                            "ord.ClientId, ord.IdProduct, ord.OrderDate "+
-                            "FROM Order_1 ord, Client cl,Product pr " +
-                            "where cl.id=ord.ClientId " +
-                            "and pr.id=ord.IdProduct";
+                "cl.Address as clAddress, " +
+                "pr.Name as ProductName, " +
+                "pr.Description as ProductDescr, " +
+                "pr.Price as ProductPrice, " +
+                "ord.id as OrderId, " +
+                "ord.ClientId, ord.IdProduct, ord.OrderDate "+
+                "FROM Order_1 ord, Client cl,Product pr " +
+                "where cl.id=ord.ClientId " +
+                "and pr.id=ord.IdProduct";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 Order order = new Order(rs.getInt("OrderId"),
-                                        new Client( rs.getInt("ClientId"),
-                                                    rs.getString("clName"),
-                                                    rs.getString("clAddress")),
-                                        new Product(rs.getInt("IdProduct"),
-                                                    rs.getString("ProductName"),
-                                                    rs.getString("ProductDescr"),
-                                                    rs.getInt("ProductPrice")),
-                                        rs.getDate("OrderDate"));
+                        new Client( rs.getInt("ClientId"),
+                                rs.getString("clName"),
+                                rs.getString("clAddress")),
+                        new Product(rs.getInt("IdProduct"),
+                                rs.getString("ProductName"),
+                                rs.getString("ProductDescr"),
+                                rs.getInt("ProductPrice")),
+                        rs.getDate("OrderDate"));
                 list.add(order);
             }
         } catch (Exception e) {
-            logger.warning( e.getMessage());
+            logger.error( e.getMessage());
         }
         return list;
     }
@@ -179,7 +179,7 @@ public class OrderDAO implements GeneralDAO<Order> {
             connection.commit();
         } catch (Exception e) {
             connection.rollback(savepointOne);
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }

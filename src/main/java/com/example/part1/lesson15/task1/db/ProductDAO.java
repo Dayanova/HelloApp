@@ -4,7 +4,7 @@ import com.example.part1.lesson15.task1.Model.Product;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class ProductDAO implements GeneralDAO<Product> {
     private Logger logger;
@@ -29,7 +29,7 @@ public class ProductDAO implements GeneralDAO<Product> {
                             resultSet.getString(2),
                             resultSet.getString(3),
                             resultSet.getInt(4)
-                            );
+                    );
                 }
             }
         }
@@ -37,7 +37,7 @@ public class ProductDAO implements GeneralDAO<Product> {
             return null;
         }
         catch (Exception e) {
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
             e.printStackTrace(System.out);
         }
         return null;
@@ -57,9 +57,9 @@ public class ProductDAO implements GeneralDAO<Product> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning( e.getMessage());
+            logger.error( e.getMessage());
         }
 
     }
@@ -79,9 +79,9 @@ public class ProductDAO implements GeneralDAO<Product> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning( e.getMessage());
+            logger.error( e.getMessage());
         }
     }
 
@@ -96,9 +96,9 @@ public class ProductDAO implements GeneralDAO<Product> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -117,7 +117,7 @@ public class ProductDAO implements GeneralDAO<Product> {
             }
 
         } catch (Exception e) {
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
         return list;
     }
@@ -141,9 +141,9 @@ public class ProductDAO implements GeneralDAO<Product> {
             try {
                 connection.rollback(savepointOne);
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
 
     }
