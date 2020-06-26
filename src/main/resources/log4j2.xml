@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Appenders>
-        <File name="file" fileName="logs/log4j/log.log">
+        <File name="file" fileName="logs/log4j/log.txt">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="file2" fileName="logs/log4j/log_trace.txt">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
             </PatternLayout>
@@ -10,7 +15,7 @@
             <PatternLayout pattern="%m%n"/>
         </Console>
         <JDBC name="db" tableName="APP_LOGS">
-            <DriverManager connectionString="dbc:firebirdsql://localhost:3050/C:\Users\Фаягуль\IdeaProjects\HelloApp\src\main\java\com\example\part1\lesson15\task1\db\STORE.FDB"
+            <DriverManager connectionString="jdbc:firebirdsql://localhost:3050/C:\Users\Фаягуль\IdeaProjects\HelloApp\src\main\java\com\example\part1\lesson15\task1\db\STORE.FDB"
                            driverClassName="org.firebirdsql.jdbc.FBDriver"
                            username="SYSDBA" password="masterkey"/>
             <Column name="LOG_ID" pattern="%u" isUnicode="false"/>
@@ -24,11 +29,12 @@
     <Loggers>
         <Root level="trace">
             <AppenderRef ref="file" level="DEBUG"/>
-            <AppenderRef ref="stdout" level="INFO"/>
+            <AppenderRef ref="stdout" level="DEBUG"/>
         </Root>
         <Logger name="com.example.part1.lesson15.task1.main.WorkWithDB" level="info" additivity="false">
+            <AppenderRef ref="file2" level="INFO"/>
             <AppenderRef ref="stdout" level="INFO"/>
-            <AppenderRef ref="db" level="DEBUG"/>
+            <AppenderRef ref="db" level="INFO"/>
         </Logger>
     </Loggers>
 </Configuration>

@@ -26,7 +26,7 @@ public class AccessToFB {
         try {
             Class.forName("org.firebirdsql.jdbc.FBDriver");
         } catch (ClassNotFoundException e) {
-            logger.error("connectToDB: Firebird JCA-JDBC драйвер не найден");
+          logger.error("connectToDB: Firebird JCA-JDBC драйвер не найден");
             return false;
         }
         try {
@@ -42,7 +42,7 @@ public class AccessToFB {
             // выключим режим автокоммтов
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            logger.error("connectToDB: ошибка подключения к БД через JDBC драйвер " + e.getMessage());
+           logger.error("connectToDB: ошибка подключения к БД через JDBC драйвер " + e.getMessage());
             return false;
         }
         return true;
@@ -79,7 +79,7 @@ public class AccessToFB {
             return false;
         }
         strConnect = JDBC + "localhost" + JDBC_PORT + strConnect;
-        logger.debug("Connect: " + strConnect);
+            logger.debug("Connect: " + strConnect);
 
         strUser = "";
         if (Objects.equals(strUser, "")) {

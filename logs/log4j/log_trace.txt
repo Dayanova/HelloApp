@@ -1,0 +1,36 @@
+2020-06-26 23:10:08,868 INFO c.e.p.l.t.m.WorkWithDB [main] connectToDB: БД подключена через JDBC драйвер 
+2020-06-26 23:10:09,042 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Order_1 
+2020-06-26 23:10:09,156 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Client 
+2020-06-26 23:10:09,215 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Product 
+2020-06-26 23:10:09,274 INFO c.e.p.l.t.m.WorkWithDB [main] DROP TABLE Order_1 
+2020-06-26 23:10:09,754 INFO c.e.p.l.t.m.WorkWithDB [main] DROP TABLE Client 
+2020-06-26 23:10:09,922 INFO c.e.p.l.t.m.WorkWithDB [main] DROP TABLE APP_LOGS 
+2020-06-26 23:10:10,040 INFO c.e.p.l.t.m.WorkWithDB [main] CREATE TABLE Client (id INTEGER PRIMARY KEY,Name CHAR (255),Address CHAR (255)) 
+2020-06-26 23:10:22,578 INFO c.e.p.l.t.m.WorkWithDB [main] CREATE TABLE Order_1 (id INTEGER PRIMARY KEY,ClientId INTEGER not null,IdProduct INTEGER not null,OrderDate DATE) 
+2020-06-26 23:10:22,765 INFO c.e.p.l.t.m.WorkWithDB [main] usePreparedStatement Order 
+2020-06-26 23:10:23,028 ERROR c.e.p.l.t.m.WorkWithDB [main] Dynamic SQL Error; SQL error code = -204; Table unknown; ORDER_1; At line 1, column 13 [SQLState:42S02, ISC error code:335544580] 
+2020-06-26 23:10:23,068 ERROR c.e.p.l.t.m.WorkWithDB [main] Dynamic SQL Error; SQL error code = -204; Table unknown; ORDER_1; At line 1, column 201 [SQLState:42S02, ISC error code:335544580] 
+2020-06-26 23:11:46,694 INFO c.e.p.l.t.m.WorkWithDB [main] connectToDB: БД подключена через JDBC драйвер 
+2020-06-26 23:11:46,841 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Order_1 
+2020-06-26 23:11:46,895 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Client 
+2020-06-26 23:11:46,944 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Product 
+2020-06-26 23:11:46,996 INFO c.e.p.l.t.m.WorkWithDB [main] DROP TABLE Order_1 
+2020-06-26 23:11:47,051 INFO c.e.p.l.t.m.WorkWithDB [main] DROP TABLE Client 
+2020-06-26 23:11:47,100 INFO c.e.p.l.t.m.WorkWithDB [main] DROP TABLE APP_LOGS 
+2020-06-26 23:11:47,174 INFO c.e.p.l.t.m.WorkWithDB [main] CREATE TABLE Client (id INTEGER PRIMARY KEY,Name CHAR (255),Address CHAR (255)) 
+2020-06-26 23:11:52,417 INFO c.e.p.l.t.m.WorkWithDB [main] CREATE TABLE Order_1 (id INTEGER PRIMARY KEY,ClientId INTEGER not null,IdProduct INTEGER not null,OrderDate DATE) 
+2020-06-26 23:11:52,461 INFO c.e.p.l.t.m.WorkWithDB [main] usePreparedStatement Order 
+2020-06-26 23:11:52,490 ERROR c.e.p.l.t.m.WorkWithDB [main] Dynamic SQL Error; SQL error code = -204; Table unknown; ORDER_1; At line 1, column 13 [SQLState:42S02, ISC error code:335544580] 
+2020-06-26 23:11:52,495 ERROR c.e.p.l.t.m.WorkWithDB [main] Dynamic SQL Error; SQL error code = -204; Table unknown; ORDER_1; At line 1, column 201 [SQLState:42S02, ISC error code:335544580] 
+2020-06-26 23:13:09,004 INFO c.e.p.l.t.m.WorkWithDB [main] connectToDB: БД подключена через JDBC драйвер 
+2020-06-26 23:13:09,153 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Order_1 
+2020-06-26 23:13:09,207 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Client 
+2020-06-26 23:13:09,262 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Product 
+2020-06-26 23:13:09,340 INFO c.e.p.l.t.m.WorkWithDB [main] usePreparedStatement Order 
+2020-06-26 23:14:13,517 INFO c.e.p.l.t.m.WorkWithDB [main] connectToDB: БД подключена через JDBC драйвер 
+2020-06-26 23:14:13,769 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Order_1 
+2020-06-26 23:14:13,823 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Client 
+2020-06-26 23:14:13,877 INFO c.e.p.l.t.m.WorkWithDB [main] DELETE FROM Product 
+2020-06-26 23:14:14,004 INFO c.e.p.l.t.m.WorkWithDB [main] usePreparedStatement Order 
+2020-06-26 23:14:49,169 INFO c.e.p.l.t.m.WorkWithDB [main] connectToDB: БД подключена через JDBC драйвер 
+2020-06-26 23:14:49,348 INFO c.e.p.l.t.m.WorkWithDB [main] usePreparedStatement Order 
