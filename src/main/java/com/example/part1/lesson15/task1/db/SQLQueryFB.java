@@ -1,7 +1,7 @@
 package com.example.part1.lesson15.task1.db;
 
 import java.sql.*;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class SQLQueryFB {
     private Logger logger;
@@ -21,26 +21,44 @@ public class SQLQueryFB {
     }
 
     public boolean DropFromTable(String strTableName) {
+        logger.trace("Drop Table " + strTableName);
         String strSQL = "";
         strSQL += "DROP TABLE " + strTableName;
         return execStatement(strSQL);
     }
 
     private boolean execStatement(String strSQL) {
-        logger.info(strSQL);
+      logger.info(strSQL);
         try {
             statement.execute(strSQL);
         } catch (SQLException e) {
-            logger.info("Ошибка statement.execute: " + e.getMessage());
+            logger.error("Ошибка statement.execute: " + e.getMessage());
             return false;
         }
         return true;
+    }
+    public void createLogTab(){
+        String strSQL = null;
+        try {
+            strSQL = "CREATE TABLE APP_LOGS" +
+                    "   (LOG_ID CHAR (255)   NOT NULL," +
+                    "    ENTRY_DATE   DATE           NOT NULL," +
+                    "    LOGGER  VARCHAR(50)    NOT NULL," +
+                    "    LOG_LEVEL   VARCHAR(10)    NOT NULL," +
+                    "    MESSAGE VARCHAR(1000)  NOT NULL," +
+                    "    EXCEPTION VARCHAR(1000)  NOT NULL" +
+                    "   );";
+            execStatement(strSQL);
+        }
+        catch(Exception e) {
+           e.printStackTrace();
+        }
     }
 
     public void createTable() {
         String strSQL = null;
         try {
-            logger.info("Создание таблицы Client");
+            logger.trace("Создание таблицы Client");
             if (!isTableExists("Client")) {
                 strSQL = "CREATE TABLE Client (" +
                         "id INTEGER PRIMARY KEY," +
@@ -48,11 +66,11 @@ public class SQLQueryFB {
                         "Address CHAR (255)" +
                         ")";
                 execStatement(strSQL);
-                strSQL = " CREATE SEQUENCE Client_id;";
-                execStatement(strSQL);
+              //  strSQL = " CREATE SEQUENCE Client_id;";
+               // execStatement(strSQL);
             }
 
-            logger.info("Создание таблицы Order");
+            logger.trace("Создание таблицы Order");
             if (!isTableExists("Order_1")) {
                 strSQL = "CREATE TABLE Order_1 (" +
                         "id INTEGER PRIMARY KEY," +
@@ -61,10 +79,11 @@ public class SQLQueryFB {
                         "OrderDate DATE" +
                         ")";
                 execStatement(strSQL);
-                strSQL = " CREATE SEQUENCE Order_1_id;";
-                execStatement(strSQL);
+               // strSQL = " CREATE SEQUENCE Order_1_id;";
+              //  execStatement(strSQL);
             }
-            logger.info("Создание таблицы Product");
+
+            logger.trace("Создание таблицы Product");
             if (!isTableExists("Product")) {
                 strSQL = "CREATE TABLE Product (" +
                         "id INTEGER PRIMARY KEY," +
@@ -74,15 +93,16 @@ public class SQLQueryFB {
                         ")";
                 execStatement(strSQL);
                 //strSQL = " CREATE SEQUENCE Product_id;";
-               // execStatement(strSQL);
+                // execStatement(strSQL);
             }
         } catch (Exception e) {
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
 
     }
 
     public boolean isTableExists(String tableName) {
+        logger.trace("Exists Table " + tableName);
         String strSQL = "SELECT RDB$RELATION_NAME FROM RDB$RELATIONS WHERE RDB$RELATION_NAME = '" + tableName.toUpperCase() + "'";
         ResultSet resultSet;
         try {
@@ -91,7 +111,7 @@ public class SQLQueryFB {
                 return resultSet.next();
             }
         } catch (SQLException e) {
-            logger.info("Ошибка обращения к таблице: " + tableName);
+            logger.error("Ошибка обращения к таблице: " + tableName);
         }
         return false;
     }

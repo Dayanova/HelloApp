@@ -4,7 +4,7 @@ import com.example.part1.lesson15.task1.Model.Client;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class ClientDAO implements GeneralDAO<Client> {
@@ -36,7 +36,7 @@ public class ClientDAO implements GeneralDAO<Client> {
             return null;
         }
         catch (Exception e) {
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
             e.printStackTrace(System.out);
         }
         return null;
@@ -54,9 +54,9 @@ public class ClientDAO implements GeneralDAO<Client> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning( e.getMessage());
+            logger.error( e.getMessage());
         }
     }
 
@@ -74,9 +74,9 @@ public class ClientDAO implements GeneralDAO<Client> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -91,9 +91,9 @@ public class ClientDAO implements GeneralDAO<Client> {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning( e.getMessage());
+            logger.error( e.getMessage());
         }
     }
 
@@ -115,9 +115,9 @@ public class ClientDAO implements GeneralDAO<Client> {
             try {
                 connection.rollback(savepointOne);
             } catch (SQLException ex) {
-                logger.warning("Error during rollback" + ex.getMessage());
+                logger.error("Error during rollback" + ex.getMessage());
             }
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -127,14 +127,14 @@ public class ClientDAO implements GeneralDAO<Client> {
         String sql ="SELECT * FROM Client" ;
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet rs = statement.executeQuery();
-                while (rs.next()) {
-                    Client client = new Client(rs.getInt("id"),
-                                                rs.getString("name"),
-                                                rs.getString("address") );
-                    list.add(client);
-                }
+            while (rs.next()) {
+                Client client = new Client(rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("address") );
+                list.add(client);
+            }
         } catch (Exception e) {
-            logger.warning(e.getMessage());
+            logger.error(e.getMessage());
         }
         return list;
     }
